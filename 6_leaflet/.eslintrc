@@ -1,0 +1,46 @@
+{
+  "extends": "standard",
+  "plugins": [
+    "react"
+  ],
+  "parser": "babel-eslint",
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
+    }
+  },
+  "rules": {
+    "no-new": [
+      "off"
+    ],
+    "no-unused-vars": [
+      "warn"
+    ],
+    "no-console": [
+      "error",
+      {
+        "allow": [
+          "warn",
+          "error"
+        ]
+      }
+    ],
+    "no-undef": [
+      "off"
+    ],
+    "no-tabs": [
+      "off"
+    ],
+    "no-debugger": [
+      "off"
+    ],
+    "react/jsx-uses-react": "error",
+    "react/jsx-uses-vars": "error",
+    "new-cap": [
+      "off"
+    ],
+    "no-template-curly-in-string": [
+      "off"
+    ]
+  }
+}

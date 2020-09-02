@@ -1,0 +1,19 @@
+{
+  "details": {
+    "value": "details",
+    "content": [
+      {
+        "title": "index.html引入leaflet.css，可下载到本地引入",
+        "detail": ""
+      },
+      {
+        "title": "引入leafleft开发包",
+        "detail": ""
+      },
+      {
+        "title": "如果用到arcgis的功能，需引入esri-leaflet开发包",
+        "detail": ""
+      }
+    ]
+  }
+}
