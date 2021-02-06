@@ -53,7 +53,7 @@ function Toolbar (props) {
 
               // 添加热力图
               const features = []
-              const blurRadius = 4 // 缓冲区半径
+              const blurRadius = 2 // 缓冲区半径
               const maxPixelIntensity = 100 // 最大识别像素
               const minPixelIntensity = 0 // 最小识别像素
               const fieldName = 'VALUE' // 渲染的字段
@@ -198,13 +198,13 @@ export default class InitMap extends Component {
       .loadModules(
         [
           'esri/map',
-          'esri/layers/googleLayer'
+          'esri/layers/gaodeLayer'
         ],
         mapOption
       )
       .then(([
         map,
-        googleLayer
+        gaodeLayer
       ]) => {
         const mapView = new map('mapContent', {
           logo: false,
@@ -219,13 +219,13 @@ export default class InitMap extends Component {
         })
 
         // 定义图层
-        const googleDigitalLayer = new googleLayer({
-          id: 'google_st',
+        const baseLayer = new gaodeLayer({
+          id: 'gaode_st',
           layertype: 'st',
           visible: true
         })
 
-        mapView.addLayer(googleDigitalLayer)
+        mapView.addLayer(baseLayer)
         this.setState({
           mapView
         })

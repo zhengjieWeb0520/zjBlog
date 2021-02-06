@@ -1,0 +1,13 @@
+.page-demo {
+  width: 100%;
+  height: calc(100% - 0.6rem);
+  margin-top: 0.6rem;
+  display: flex;
+
+  .page-content {
+    flex: 1 1;
+    position: relative;
+    margin: 0.1rem;
+    overflow-y: auto;
+  }
+}

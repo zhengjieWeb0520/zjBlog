@@ -136,13 +136,13 @@ export default class InitMap extends Component {
       .loadModules(
         [
           'esri/map',
-          'esri/layers/googleLayer'
+          'esri/layers/gaodeLayer'
         ],
         mapOption
       )
       .then(([
         map,
-        googleLayer
+        gaodeLayer
       ]) => {
         const mapView = new map('mapContent', {
           logo: false,
@@ -157,13 +157,13 @@ export default class InitMap extends Component {
         })
 
         // 定义图层
-        const googleDigitalLayer = new googleLayer({
-          id: 'google_road',
+        const baseLayer = new gaodeLayer({
+          id: 'gaode_road',
           layertype: 'road',
           visible: true
         })
 
-        mapView.addLayer(googleDigitalLayer)
+        mapView.addLayer(baseLayer)
         this.setState({
           mapView
         })

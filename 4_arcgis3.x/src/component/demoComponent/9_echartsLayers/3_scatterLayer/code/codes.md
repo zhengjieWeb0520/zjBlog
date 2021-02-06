@@ -10,9 +10,7 @@ function Toolbar (props) {
   const { mapView } = props
   useEffect(() => {
     // 地图初始化加载完成绘制迁徙图
-    mapView.on('load', () => {
-      initChart()
-    })
+    initChart()
     // 地图缩放平移重绘迁徙图
     mapView.on('zoom-end', () => {
       reDraw()
@@ -593,13 +591,13 @@ export default class InitMap extends Component {
       .loadModules(
         [
           'esri/map',
-          'esri/layers/ArcGISTiledMapServiceLayer'
+          'esri/layers/gaodeLayer'
         ],
         mapOption
       )
       .then(([
         map,
-        ArcGISTiledMapServiceLayer
+        gaodeLayer
       ]) => {
         const mapView = new map('mapContent', {
           logo: false,
@@ -613,14 +611,14 @@ export default class InitMap extends Component {
           maxZoom: 18 // 最大空间等级
         })
 
-        // 定义图层对象
-        const blueUrl = 'http://map.geoq.cn/arcgis/rest/services/ChinaOnlineStreetPurplishBlue/MapServer'
-        const blueLayer = new ArcGISTiledMapServiceLayer(blueUrl, {
-          id: 'arcgis_blue',
+        // 定义图层
+        const baseLayer = new gaodeLayer({
+          id: 'gaode_st',
+          layertype: 'st',
           visible: true
         })
 
-        mapView.addLayer(blueLayer)
+        mapView.addLayer(baseLayer)
         this.setState({
           mapView
         })

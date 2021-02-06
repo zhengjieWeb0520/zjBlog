@@ -1,0 +1,27 @@
+{
+  "details": {
+    "value": "details",
+    "content": [
+      {
+        "title": "react或vue项目的引包工具esri-loader",
+        "detail": ""
+      },
+      {
+        "title": "修改api的init.js和dojo.js文件IP和端口",
+        "detail": ""
+      },
+      {
+        "title": "在index.html文件中添加arcgis api的css文件",
+        "detail": ""
+      },
+      {
+        "title": "初始化地图时引入arcgis api的init.js文件",
+        "detail": ""
+      },
+      {
+        "title": "如果需要在api中添加自己的扩展组件包，则需要在index.html中配置",
+        "detail": ""
+      }
+    ]
+  }
+}

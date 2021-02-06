@@ -12,7 +12,7 @@ export default (props) => {
   const history = useHistory()
   const dispatch = useDispatch()
   useEffect(() => {
-    dispatch(initMap('mapContent', [112, 32], 4, 'google', ['st']))
+    dispatch(initMap('mapContent', [112, 32], 4, 'gaode', ['st']))
   }, [])
   return (
     <div className="page page-index">

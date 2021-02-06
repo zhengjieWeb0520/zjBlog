@@ -32,7 +32,7 @@ function Toolbar (props) {
       ]) => {
         // 定义图层
         var layerInfo = new WMTSLayerInfo({
-          identifier: 'jssthx:JSDEM_90M',
+          identifier: 'nurc:Img_Sample',
           tileMatrixSet: 'EPSG:4326',
           format: 'image/png'
         })
@@ -41,7 +41,7 @@ function Toolbar (props) {
           layerInfo: layerInfo
         }
 
-        const wmtsLayer = new WMTSLayer('http://218.2.190.86:16080/geoserver/gwc/service/wmts', options)
+        const wmtsLayer = new WMTSLayer('http://47.101.174.142:16080/geoserver/gwc/service/wmts', options)
         mapView.addLayer(wmtsLayer)
       })
   }
@@ -94,13 +94,13 @@ export default class InitMap extends Component {
       .loadModules(
         [
           'esri/map',
-          'esri/layers/googleLayer'
+          'esri/layers/gaodeLayer'
         ],
         mapOption
       )
       .then(([
         map,
-        googleLayer
+        gaodeLayer
       ]) => {
         const mapView = new map('mapContent', {
           logo: false,
@@ -115,13 +115,13 @@ export default class InitMap extends Component {
         })
 
         // 定义图层
-        const googleDigitalLayer = new googleLayer({
-          id: 'google_road',
-          layertype: 'road',
+        const baseLayer = new gaodeLayer({
+          id: 'gaode_st',
+          layertype: 'st',
           visible: true
         })
 
-        mapView.addLayer(googleDigitalLayer)
+        mapView.addLayer(baseLayer)
         this.setState({
           mapView
         })

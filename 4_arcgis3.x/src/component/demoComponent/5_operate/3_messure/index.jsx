@@ -231,23 +231,14 @@ export default class InitMap extends Component {
       .loadModules(
         [
           'esri/map',
-          'esri/layers/googleLayer',
-          'esri/toolbars/draw',
-          'esri/layers/GraphicsLayer',
-          'esri/dijit/Popup',
-          'dojo/dom-construct'
+          'esri/layers/gaodeLayer'
         ],
         mapOption
       )
       .then(([
         map,
-        googleLayer,
-        Draw,
-        GraphicsLayer,
-        Popup,
-        domConstruct
+        gaodeLayer
       ]) => {
-        this.popup = new Popup(null, domConstruct.create('div'))
         const mapView = new map('mapContent', {
           logo: false,
           slider: false,
@@ -255,26 +246,19 @@ export default class InitMap extends Component {
           showLabels: true,
           zoom: this.initZoom,
           center: this.initCenter,
-          infoWindow: this.popup,
+          // infoWindow: this.popup,
           minZoom: 2, // 最小空间等级
           maxZoom: 18 // 最大空间等级
         })
 
         // 定义图层
-        const googleDigitalLayer = new googleLayer({
-          id: 'google_road',
+        const baseLayer = new gaodeLayer({
+          id: 'gaode_road',
           layertype: 'road',
           visible: true
         })
 
-        // 测量绘制图层
-        this.measureGraphicsLayer = new GraphicsLayer({
-          id: 'measureGraphicsLayer'
-        })
-        // 测量绘制工具
-        this.messureDraw = new Draw(mapView)
-        mapView.addLayer(googleDigitalLayer)
-        mapView.addLayer(this.measureGraphicsLayer)
+        mapView.addLayer(baseLayer)
         this.setState({
           mapView
         })
