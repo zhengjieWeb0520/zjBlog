@@ -10,7 +10,7 @@ export const toolList = [
     icon: 'iconhecha',
     name: 'zj note',
     desc: '前端、GIS、后台的知识积累',
-    url: '#'
+    url: 'https://blog.csdn.net/zhengjie0722'
   },
   {
     icon: 'icontongji',
@@ -28,13 +28,13 @@ export const toolList = [
     icon: 'iconditu',
     name: 'zj arcgis api 3.x',
     desc: 'arcgis api 3.x封装方法，工作中案例介绍',
-    url: ''
+    url: '/arcgis3x'
   },
   {
     icon: 'iconguojia',
     name: 'zj arcgis api 4.x',
     desc: 'arcgis api 4.x封装方法，工作中案例介绍',
-    url: ''
+    url: '/arcgis4x'
   },
   {
     icon: 'iconditu1',
