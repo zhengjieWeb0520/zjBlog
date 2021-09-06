@@ -2,7 +2,7 @@
  * @Author: 郑杰14
  * @Date: 2020-07-31 23:03:06
  * @LastEditors: 郑杰14
- * @LastEditTime: 2020-07-31 23:09:22
+ * @LastEditTime: 2021-08-04 10:17:56
  * @Description: 底部
 -->
 <template>
@@ -26,4 +26,10 @@ export default {
 </script>
 
 <style scoped lang="scss">
+footer {
+  position: fixed;
+  width: 100%;
+  bottom: 30px;
+  text-align: center;
+}
 </style>

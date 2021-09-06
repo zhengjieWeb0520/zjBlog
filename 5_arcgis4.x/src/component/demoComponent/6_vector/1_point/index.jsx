@@ -41,6 +41,15 @@ function Toolbar (props) {
    * 添加图层
    */
   const addLayer = () => {
+    var new2 = function (func) {
+      var o = Object.create(func.prototype)
+      var k = func.call(o)
+      if (typeof k === 'object') {
+        return k
+      } else {
+        return o
+      }
+    }
     // 判断图层是否已存在
     let displayLayer = mapView.map.findLayerById('pointLayer')
     if (displayLayer) {
@@ -52,7 +61,6 @@ function Toolbar (props) {
     }
     // 添加图层
     mapView.map.add(displayLayer)
-
     axios.get('./data/vector/points.json').then((res) => {
       const { data } = res
       const spatialReference = new SpatialReference({ wkid: 4326 })

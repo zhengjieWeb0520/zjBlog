@@ -1,0 +1,24 @@
+{
+  "line": [
+    {
+      "id": 1,
+      "type": "折线图",
+      "img": "https://cdn.jsdelivr.net/gh/apache/echarts-website@asf-site/examples/data/thumb/line-simple.webp?_v_=1619170949911",
+      "name": "普通折线图"
+    },
+    {
+      "id": 2,
+      "type": "折线图",
+      "img": "https://cdn.jsdelivr.net/gh/apache/echarts-website@asf-site/examples/data/thumb/line-smooth.webp?_v_=1619170949911",
+      "name": "平滑折线图"
+    }
+  ],
+  "bar": [
+    {
+      "id": 1,
+      "type": "柱状图",
+      "img": "https://cdn.jsdelivr.net/gh/apache/echarts-website@asf-site/examples/data/thumb/bar-simple.webp?_v_=1619170949911",
+      "name": "普通柱状图"
+    }
+  ]
+}

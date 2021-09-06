@@ -2,12 +2,13 @@
  * @Author: 郑杰14
  * @Date: 2020-07-30 16:09:55
  * @LastEditors: 郑杰14
- * @LastEditTime: 2020-07-30 17:23:27
+ * @LastEditTime: 2021-08-02 11:15:18
  * @Description:
  */
 import Vue from 'vue'
 import Router from 'vue-router'
-import MainIndex from './../pages/index'
+import JsonCoorTrans from './../pages/JsonCoorTrans'
+import ExcelCoorTrans from './../pages/ExcelCoorTrans'
 
 Vue.use(Router)
 
@@ -16,7 +17,13 @@ export default new Router({
     {
       path: '/',
       name: 'Index',
-      component: MainIndex,
+      component: JsonCoorTrans,
+      children: []
+    },
+    {
+      path: '/excelCoorTrans',
+      name: 'ExcelCoorTrans',
+      component: ExcelCoorTrans,
       children: []
     }
   ]
