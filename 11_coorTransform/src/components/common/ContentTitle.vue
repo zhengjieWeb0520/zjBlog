@@ -2,7 +2,7 @@
  * @Author: 郑杰14
  * @Date: 2020-07-30 16:42:30
  * @LastEditors: 郑杰14
- * @LastEditTime: 2021-08-04 11:02:06
+ * @LastEditTime: 2021-09-06 14:34:52
  * @Description: 内容头部
 -->
 <template>
@@ -75,7 +75,6 @@ export default {
           type: 'warning',
           duration: 1000
         })
-        return
       }
       if (val === 'mercator' && this.transforCoor !== 'wgs84') {
         // 目前只支持wgs84坐标系转墨卡托投影坐标系
@@ -84,7 +83,6 @@ export default {
           type: 'warning',
           duration: 1000
         })
-        return
       }
     },
     transforCoor (val) {
